@@ -37,7 +37,9 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
     ```
 ![Add Key Vault URL to your app](./media/AddKeyVaultURL.png)
 
-3. F5 or from menu select *Debug | Start Debugging*. The app should run successfully using the secrets from Key Vault.
+3. (Optional) If you need to use an account that is different from the Personalization account in the top right corner of Visual Studio, to go to *Tools | Options | Azure Service Authentication | Account Select*
+
+4. F5 or from menu select *Debug | Start Debugging*. The app should run successfully using the secrets from Key Vault.
 
 ### How did the app access Key Vault during debugging session
 The [Azure Services Authentication Extension](https://go.microsoft.com/fwlink/?linkid=862354) allows the web app to use the Visual Studio sign-in identity to access Azure Key Vault
