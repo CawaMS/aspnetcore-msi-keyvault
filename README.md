@@ -52,4 +52,8 @@ The *Deploy to Azure* button above deploys a template that makes sure Azure App 
 2. Right click on the project and launch the publish dialog to deploy the web app to the your App Services resource in the resource group you created earlier.
 
 
-Article: https://anthonychu.ca/post/secrets-aspnet-core-key-vault-msi
+## Learn more about securely developing Azure applications
+
+* [Keeping Secrets Safe in ASP.NET Core with Azure Key Vault and Managed Service Identity](https://anthonychu.ca/post/secrets-aspnet-core-key-vault-msi)
+
+* [Announcement: Developing Web Apps without Secrets in Source Code in Visual Studio](https://go.microsoft.com/fwlink/?linkid=862656)
