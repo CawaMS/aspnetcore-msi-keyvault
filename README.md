@@ -30,6 +30,8 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
 
 ![Select Policy](./media/SelectPolicy.png)
 
+Save the access policy by clicking *Save* on the top left corner in the menu bar of current blade. 
+
 2. Obtain the Key Vault URL from Azure portal. Save it in the environment variable section in launchsettings.json file
 
 
