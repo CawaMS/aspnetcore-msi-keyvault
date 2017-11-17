@@ -30,7 +30,7 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
 
 ![Select Policy](./media/SelectPolicy.png)
 
-Save the access policy by clicking *Save* on the top left corner in the menu bar of current blade. 
+Save the access policy by clicking *Save* on the top left corner in the menu bar of current blade.
 
 2. Obtain the Key Vault URL from Azure portal. Save it in the environment variable section in launchsettings.json file
 
@@ -44,7 +44,7 @@ Save the access policy by clicking *Save* on the top left corner in the menu bar
 
 ![Select an account in Visual Studio](./media/ASAL-visualstudio.png)
 
-4. Press F5 or from menu select *Debug | Start Debugging*. The app should display the secrets from Key Vault.
+4. Press F5 or select *Debug | Start Debugging* from tool bar in Visual Studio. The app should display the secrets from Key Vault.
 
 ### How did the app access Key Vault during debugging session
 During startup the app uses Visual Studio sign-in identity to access Key Vault and pulls secret settings to the process memory so the app runs successfully.
