@@ -8,7 +8,7 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
 ## Pre-requisites to run this sample
 * [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/)
     * Install *.NET core cross-platform development* workload
-* [Azure Services Authentication Extension](https://go.microsoft.com/fwlink/?linkid=862354)
+* [Azure Services Authentication Extension](https://go.microsoft.com/fwlink/?linkid=862354). *If it downloads as a .zip file, please try other browsers*
 * Download or clone this repository and open the project in Visual Studio
 * An Azure subscription
     * [Create your Azure free account today](https://azure.microsoft.com/en-us/free/)
