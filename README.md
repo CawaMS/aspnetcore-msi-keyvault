@@ -10,6 +10,9 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
     * Install [todo: workloads needed]
 * [Azure Services Authentication Extension](https://go.microsoft.com/fwlink/?linkid=862354)
 * Download or clone this repository and open the project in Visual Studio
+    ```
+    git clone https://github.com/CawaMS/aspnetcore-msi-keyvault.git
+    ```
 * An Azure subscription. [Create your Azure free account today](https://azure.microsoft.com/en-us/free/)
 
 ## How to debug this application locally
