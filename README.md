@@ -6,25 +6,23 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
 
 
 ## Pre-requisites to run this sample
-* [Visual Studio 2017](https://www.visualstudio.com/)
-    * Install [todo: workloads needed]
-* [Azure Services Authentication Extension](https://go.microsoft.com/fwlink/?linkid=862354)
+* [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/)
+    * Install *.NET core cross-platform development* workload
+* [Azure Services Authentication Extension](https://go.microsoft.com/fwlink/?linkid=862354). To go Visual Studio *Tools | Extensions and Updates* and search for *Azure Services Authentication* online to install the extension.
 * Download or clone this repository and open the project in Visual Studio
-    ```
-    git clone https://github.com/CawaMS/aspnetcore-msi-keyvault.git
-    ```
-* An Azure subscription. [Create your Azure free account today](https://azure.microsoft.com/en-us/free/)
+* An Azure subscription
+    * [Create your Azure free account today](https://azure.microsoft.com/en-us/free/)
 
 ## How to debug this application locally
 
 1. Deploy the following resources to your Azure subscription by clicking the button below
-    * Azure App Services
+    * Azure App Services with [Managed Service Identity (MSI)](https://docs.microsoft.com/en-us/azure/app-service/app-service-managed-service-identity)
     * Azure Key Vault
     * Two secrets in the Key Vault
 
     [![Deploy to Azure](https://azuredeploy.net/deploybutton.svg)](https://azuredeploy.net/)
 
-2. Go to your Key Vault resource on Azure portal. Browse to *Access policies* and add yourself to have secret Get and List permissions.
+2. Go to your Key Vault resource on Azure portal. Browse to *Access policies*. Grant yourself Secret Get and List permissions.
 
 ![Add Access Policy](./media/AddAccessPolicy.png)
 
@@ -32,7 +30,9 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
 
 ![Select Policy](./media/SelectPolicy.png)
 
-2. Obtain the Key Vault URL from Azure portal and put it in the launchsettings.json file
+Save the access policy by clicking *Save* on the top left corner in the menu bar of current blade.
+
+2. Obtain the Key Vault URL from Azure portal. Save it in the environment variable section in launchsettings.json file
 
 
     ```
@@ -40,25 +40,28 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
     ```
 ![Add Key Vault URL to your app](./media/AddKeyVaultURL.png)
 
-3. (Optional) If you need to use an account that is different from the Personalization account in the top right corner of Visual Studio, to go to *Tools | Options | Azure Service Authentication | Account Select*
+3. (Optional) If you need to use an account that is different from the Personalization account in the top right corner of Visual Studio, to go to *Tools | Options | Azure Service Authentication | Account Selection*
 
-4. F5 or from menu select *Debug | Start Debugging*. The app should run successfully using the secrets from Key Vault.
+![Select an account in Visual Studio](./media/ASAL-visualstudio.png)
+
+4. Press F5 or select *Debug | Start Debugging* from tool bar in Visual Studio. The app should display the secrets from Key Vault.
 
 ### How did the app access Key Vault during debugging session
-The [Azure Services Authentication Extension](https://go.microsoft.com/fwlink/?linkid=862354) allows the web app to use the Visual Studio sign-in identity to access Azure Key Vault
+During startup the app uses Visual Studio sign-in identity to access Key Vault and pulls secret settings to the process memory so the app runs successfully.
+
+![access key vault from visual studio](./media/access-keyvault-visualstudio.png)
+
+The [Azure Services Authentication Extension](https://go.microsoft.com/fwlink/?linkid=862354) allows the app to access Azure Key Vault using Visual Studio sign-in identity
 
 ## How to deploy this application to Azure
-The *Deploy to Azure* button above deploys a template that makes sure Azure App Services Managed Services Identity (MSI) is enabled, and Key Vault access policy is configured to allow the App Services to access the Key Vault. This makes sure when the web app runs in the App Services, it can use the MSI to access Key Vault.
 
-1. Go to the App Services in the resource group you created earlier. Select App Settings and add the Key Vault URL
+1. In Azure portal, navigate to the App Services you created earlier. Select App Settings and add the Key Vault URL
 
 ![Add app setting for Key Vault](./media/add-app-setting.png)
 
-2. Right click on the project and launch the publish dialog to deploy the web app to the your App Services resource in the resource group you created earlier.
+2. Right click the project and launch the publish dialog. Deploy the web app to the your App Services resource created earlier.
 
 
 ## Learn more about securely developing Azure applications
-
-* [Keeping Secrets Safe in ASP.NET Core with Azure Key Vault and Managed Service Identity](https://anthonychu.ca/post/secrets-aspnet-core-key-vault-msi)
 
 * [Announcement: Developing Web Apps without Secrets in Source Code in Visual Studio](https://go.microsoft.com/fwlink/?linkid=862656)
