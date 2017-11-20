@@ -35,13 +35,15 @@ This sample demonstrates how to securely access an Azure resource such as Key Va
 
 Save the access policy by clicking *Save* on the top left corner in the menu bar of current blade.
 
-2. Obtain the Key Vault URL from Azure portal. Save it in the environment variable section in launchsettings.json file
+2. Obtain the Key Vault URL from Azure portal. Save it in the environment variable section in launchsettings.json file, under a profile in the profiles section. If you only save it under one profile, for example, the *aspnetcore-msi-keyvault* profile, you will need to choose this profile when running in debug.
 
 
     ```
         "KEYVAULT_ENDPOINT": "https://[NameOfYourKeyVault].vault.azure.net/"
     ```
 ![Add Key Vault URL to your app](./media/AddKeyVaultURL.png)
+
+![select the right debug profile](./media/debug-profile.png)
 
 3. (Optional) If you need to use an account that is different from the Personalization account in the top right corner of Visual Studio, to go to *Tools | Options | Azure Service Authentication | Account Selection*
 
